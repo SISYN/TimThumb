@@ -897,11 +897,8 @@ class timthumb {
 		$base = $this->docRoot;
 		
 		// account for Windows directory structure
-		if (strstr($_SERVER['SCRIPT_FILENAME'],':')) {
-			$sub_directories = explode('\\', str_replace($this->docRoot, '', $_SERVER['SCRIPT_FILENAME']));
-		} else {
-			$sub_directories = explode('/', str_replace($this->docRoot, '', $_SERVER['SCRIPT_FILENAME']));
-		}
+		$dir_sep = strstr($_SERVER['SCRIPT_FILENAME'],':') ? '\\' : '/';
+  		$sub_directories = explode($dir_sep, str_replace($this->docRoot, '', $_SERVER['SCRIPT_FILENAME']));
 
 		foreach ($sub_directories as $sub){
 			$base .= $sub . '/';

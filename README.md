@@ -4,6 +4,10 @@ TimThumb is a simple, flexible, PHP script that resizes images.
 
 My intention is to have an updated repo which works with composer on all my known LAMP server configurations because the only timthumb repo on packagist is out of date (2.8.11) which doesn't works for me.
 
+## The fix in this repo
+
+There is an issue where TimThumb is unable to create its cache on Windows systems. This version simplifies the Windows directory detection in addition to fixing this permission-related caching issue.
+
 
 ## Installing with composer
 
